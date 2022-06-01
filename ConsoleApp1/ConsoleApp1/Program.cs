@@ -5,7 +5,14 @@ namespace ConsoleApp1
     class Program
     {
         static void Main(string[] args)
-        {   /*
+        {
+            // Metodos
+
+            subsNumber();
+
+            Console.WriteLine(multNumber(5, 6));
+
+            /*
              * Fundamentos de C#
              * 
              * Primitivos
@@ -98,6 +105,35 @@ namespace ConsoleApp1
             Console.WriteLine("Area del circulo es: " + area);
 
             Console.ReadKey();
+        }
+
+        // Metodos 
+
+        int sumNumber()
+        {
+            int num1 = 7;
+            int num2 = 9;
+
+            int result = num1 + num2;
+
+            return result;
+        }
+
+        static int multNumber(int num1, int num2)
+        {
+            int result = num1 * num2;
+
+            return result;
+        }
+
+        static void subsNumber ()
+        {
+            int num1 = 6;
+            int num2 = 8;
+
+            int result = num1 - num2;
+
+            Console.WriteLine("Resultado: " + result);
         }
     }
 }
