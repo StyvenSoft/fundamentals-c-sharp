@@ -118,6 +118,58 @@ namespace ConsoleApp1
 
             Console.WriteLine(moreSum(value1, value2, value3));
 
+            bool coolNew;
+            coolNew = false;
+
+            Console.WriteLine(!coolNew);
+
+            // Operadores de comparacion
+            /*
+             * igual que ==
+             * Diferente que != 
+             * menor que <
+             * mayor que >
+             * Mayor igual que >=
+             * 
+             * */
+
+            // Operadores Logicos
+            /**
+             * && y logico
+             * || o logico
+             * 
+             * */
+
+            string document = "no";
+
+
+            Console.WriteLine("Ingresa Edad: ");
+
+            int ageUser = Int32.Parse(Console.ReadLine());
+
+            if (ageUser >= 18)
+            {
+                Console.WriteLine("Tienes documento?");
+
+                document = Console.ReadLine();
+            }
+
+            if(ageUser >= 18 && document == "si")
+            {
+                Console.WriteLine("Conducir");
+            }
+
+            else
+            {
+                Console.WriteLine("Carnet?");
+
+                string carnet = Console.ReadLine();
+
+                int compara = String.Compare(carnet, "si", true);
+
+                if (compara == 0) Console.WriteLine("Vehiculo");
+
+            }
         }
 
         // Metodos 
@@ -179,6 +231,7 @@ namespace ConsoleApp1
         {
             return num1 + num2 + num3;
         }
+
 
     }
 }
