@@ -4,6 +4,10 @@ namespace ConsoleApp1
 {
     class Program
     {
+        // Variables accesibles
+        int numOne = 5;
+        int numTwo = 7;
+
         static void Main(string[] args)
         {
             // Metodos
@@ -105,6 +109,15 @@ namespace ConsoleApp1
             Console.WriteLine("Area del circulo es: " + area);
 
             Console.ReadKey();
+
+            int value1 = 7;
+
+            double value2 = 5.3;
+
+            double value3 = 8.8;
+
+            Console.WriteLine(moreSum(value1, value2, value3));
+
         }
 
         // Metodos 
@@ -135,5 +148,37 @@ namespace ConsoleApp1
 
             Console.WriteLine("Resultado: " + result);
         }
+
+        // Ambito de metodos
+
+        void firstMethod ()
+        {
+            // int numOne = 5;
+            // int numTwo = 7;
+
+            // Flujo de ejecucion
+            Console.WriteLine(numOne + numTwo);
+        }
+
+        void secondMethod()
+        {
+            Console.WriteLine(numOne);
+            
+            sumOther(5, 6, 9);
+        }
+
+        // Sobrecarga de parametros en metodos
+        static int sumOther(int operator1, int operator2) => operator1 + operator2;
+
+        static int sumOther(int number1, int number2, int number3) => number1 + number2 + number3;
+
+        static int sumOther(int number1, int number2, double number3) => number1 + number2;
+        
+        // parametros opcionales al final
+        private static double moreSum(int num1, double num2, double num3= 0)
+        {
+            return num1 + num2 + num3;
+        }
+
     }
 }
