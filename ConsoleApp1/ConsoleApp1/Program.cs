@@ -170,6 +170,44 @@ namespace ConsoleApp1
                 if (compara == 0) Console.WriteLine("Vehiculo");
 
             }
+
+            // Array de tipo String
+
+            string[] cadens = new string[5];
+            
+            cadens[3] = "Hugo";
+            cadens[4] = "Steveen";
+
+            string[] nameClients = { "Fredy", "Mary", "Yina" };
+
+            Console.WriteLine("Result {0}", cadens.Length);
+
+            Console.WriteLine(nameClients);
+
+            // Array tipo entero
+
+            int[] ageOthers = new int[5];
+
+            ageOthers[0] = 5;
+            ageOthers[1] = 6;
+            
+            int[] agesNew = { 8, 55, 17, 23 };
+
+            Console.WriteLine(agesNew);
+
+            //Array bidimensional
+
+            double[,] newDoble = new double[2, 2] { { 8, 2.5 }, { 6.4, 5.4 } };
+
+            Console.WriteLine("resultado {0}", newDoble[1,0]);
+
+            // Array tridimensional
+
+            double[,,] newTrid = new double[2, 2, 3] { { { 8, 2.5, 7.1 }, { 6.4, 5.4, 6 } }, { { 8, 1.2, 5 }, { 8, 1.2, 6 } } };
+
+            Console.WriteLine("resultado {0}", newTrid[1, 0, 1]);
+
+            Console.ReadKey();
         }
 
         // Metodos 
