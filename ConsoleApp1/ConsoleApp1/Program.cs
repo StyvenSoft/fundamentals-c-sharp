@@ -208,6 +208,73 @@ namespace ConsoleApp1
             Console.WriteLine("resultado {0}", newTrid[1, 0, 1]);
 
             Console.ReadKey();
+
+            Console.WriteLine("Ingresa tu edad");
+
+            int ageClient = Int32.Parse(Console.ReadLine());
+
+            if (ageClient < 18) Console.WriteLine("Niño");
+            else if (ageClient < 30) Console.WriteLine("Joven");
+            else if (ageClient < 60) Console.WriteLine("Adulto");
+            else Console.WriteLine("Mayor");
+
+
+            Console.WriteLine("Elige medio de transporte (coche, tren, avion): ");
+
+            string meansTransport = Console.ReadLine();
+
+            switch (meansTransport)
+            {
+                case "coche":
+                    Console.WriteLine("Velocidad 100 km/h");
+                    break;
+                case "tren":
+                    Console.WriteLine("Velocidad 250 km/h");
+                    break;
+                case "avion":
+                    Console.WriteLine("Velocidad 800 km/h");
+                    break;
+                default:
+                    Console.WriteLine("No transporte");
+                    break;
+            }
+
+            Console.WriteLine("Bucle while");
+
+            string response = Console.ReadLine();
+
+            while (response != "no")
+            {
+                Console.WriteLine("Ingreso bucle");
+
+                string myName = Console.ReadLine();
+
+                Console.WriteLine($"respuesta {myName}");
+
+            }
+
+            Random numbers = new Random();
+
+            int numberAleat = numbers.Next(0, 100);
+
+            int myNumberOne = 101;
+
+            int inter = 0;
+
+            Console.WriteLine(numberAleat);
+
+            while(numberAleat != myNumberOne)
+            {
+                inter++;
+
+                myNumberOne = int.Parse(Console.ReadLine());
+
+                if(myNumberOne > numberAleat)
+                {
+                    Console.WriteLine("Numero bajo");
+                }
+            }
+
         }
 
         // Metodos 
