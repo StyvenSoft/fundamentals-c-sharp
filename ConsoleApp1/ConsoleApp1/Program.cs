@@ -239,6 +239,8 @@ namespace ConsoleApp1
                     break;
             }
 
+            // Bucle While
+
             Console.WriteLine("Bucle while");
 
             string response = Console.ReadLine();
@@ -253,6 +255,8 @@ namespace ConsoleApp1
 
             }
 
+            // Ejercicio bucle While
+
             Random numbers = new Random();
 
             int numberAleat = numbers.Next(0, 100);
@@ -261,7 +265,7 @@ namespace ConsoleApp1
 
             int inter = 0;
 
-            Console.WriteLine(numberAleat);
+            Console.WriteLine("Ingresar numero 1 - 100");
 
             while(numberAleat != myNumberOne)
             {
@@ -269,12 +273,24 @@ namespace ConsoleApp1
 
                 myNumberOne = int.Parse(Console.ReadLine());
 
-                if(myNumberOne > numberAleat)
-                {
-                    Console.WriteLine("Numero bajo");
-                }
+                if(myNumberOne > numberAleat)  Console.WriteLine("Numero mas bajo");
+
+                if (myNumberOne < numberAleat) Console.WriteLine("Numero mas alto");
             }
 
+            Console.WriteLine($"Correcto, intentos {inter}");
+
+            // Bucle do - While
+
+            int valueZ = 10;
+
+            do
+            {
+                Console.WriteLine("Impresion" + valueZ);
+
+                valueZ++;
+
+            } while (valueZ < 15);
         }
 
         // Metodos 
