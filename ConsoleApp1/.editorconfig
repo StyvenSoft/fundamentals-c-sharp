@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA2241: Proporcionar argumentos correctos para los métodos de formato
+dotnet_diagnostic.CA2241.severity = error

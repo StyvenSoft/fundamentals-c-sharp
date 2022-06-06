@@ -271,7 +271,38 @@ namespace ConsoleApp1
             {
                 inter++;
 
-                myNumberOne = int.Parse(Console.ReadLine());
+                try
+                {
+                    myNumberOne = int.Parse(Console.ReadLine());
+                } catch(FormatException ex)
+                {
+                    Console.WriteLine("Error numero invalido" + ex);
+                } catch(OverflowException ex)
+                {
+                    Console.WriteLine("Demasiado alto"+ ex);
+                }
+                /*
+                 * Jerarquia de excepciones
+                 * 
+                 * 1. Exception
+                 * 2. SystemException
+                 * 3. FormatException y OverflowException
+                 * 
+                 */
+
+                // Excepcion generica
+               /* catch(Exception ex)
+                {
+                    Console.WriteLine("Excepcion generica" + ex.Message);
+                }
+                */
+
+                // Excepciones con Filtro
+
+                catch (Exception e) when (e.GetType() != typeof(FormatException))
+                {
+                    Console.WriteLine(e.Message);
+                }
 
                 if(myNumberOne > numberAleat)  Console.WriteLine("Numero mas bajo");
 
@@ -291,6 +322,13 @@ namespace ConsoleApp1
                 valueZ++;
 
             } while (valueZ < 15);
+
+            Console.WriteLine("Ingresa Numero de Mes");
+
+            int numberMonth = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(NameMonth(numberMonth));
+
         }
 
         // Metodos 
@@ -352,6 +390,53 @@ namespace ConsoleApp1
         {
             return num1 + num2 + num3;
         }
+
+        static void useChecked()
+        {
+            // Comprobar desbordamiento
+            checked
+            {
+                int numberMax = int.MaxValue;
+
+                // Desbordamiento de valor maximo
+
+                int resultMax = numberMax + 20;
+
+                Console.WriteLine(resultMax);
+            }
+
+            // No comprobar desbordamiento tipo INT, LONG
+
+            // unchecked()
+            
+        }
+
+        public static string NameMonth(int month)
+        {
+            switch (month)
+            {
+                case 1:
+                    return "Enero";
+                case 2:
+                    return "Febrero";
+                case 3:
+                    return "Marzo";
+                case 4:
+                    return "Abril";
+                case 5:
+                    return "Mayo";
+                case 6:
+                    return "Junio";
+                case 7:
+                    return "Julio";
+                case 8:
+                    return "Agosto";
+                default:
+                    return "Error mes";
+            }
+            
+        }
+
 
 
     }
