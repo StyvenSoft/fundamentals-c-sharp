@@ -432,12 +432,35 @@ namespace ConsoleApp1
                 case 8:
                     return "Agosto";
                 default:
-                    return "Error mes";
+                    // return "Error mes";
+                    throw new ArgumentOutOfRangeException();
             }
             
         }
 
+        static void exampleFinaly()
+        {
+            System.IO.StreamReader file = null;
 
+            try
+            {
+                string lines;
+                int counter = 0;
+                string path = @"C:\Users\support\Desktop\variables.txt";
+
+                file = new System.IO.StreamReader(path);
+                
+                while((lines = file.ReadLine()) != null)
+                {
+                    Console.WriteLine(lines);
+                    counter++;
+                }
+
+            } catch (Exception e)
+            {
+                Console.WriteLine("Error lectura de archivo"+ e);
+            }
+        }
 
     }
 }
